@@ -1,10 +1,10 @@
-package com.Myllena.Aprendendo_Spring;
+package com.myllena.aprendendospring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AprendendoSpringApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
