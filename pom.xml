@@ -8,10 +8,10 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Myllena</groupId>
-	<artifactId>Aprendendo-Spring</artifactId>
+	<groupId>com.myllena</groupId>
+	<artifactId>aprendendo-spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Aprendendo-Spring</name>
+	<name>aprendendo-spring</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
