@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * TODO
  *  - Usar uma lista para armazenar as materias do POST
  *  - Criar classe para salvar e consultar as anotações por matéria
+ *  - Pesquisa sobre @RestController, @PostMapping e @GetMapping
  */
 @RestController
 public class MateriaApi {
