@@ -1,5 +1,7 @@
 package com.myllena.aprendendospring.api;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,21 +10,22 @@ import java.util.List;
 @RestController
 public class MateriaApi {
 
-    private String materia = null;
-    private List<String> nomeMateria = new ArrayList<>();
+    private List<Materia> materias = new ArrayList<>();
 
     @PostMapping("/materias")
-    public String materia(@RequestBody String materia) {
-        nomeMateria.add(materia);
-        return "A materia " + materia + " foi cadastrada.";
+    public ResponseEntity<Void> materia(@RequestBody Materia materia) {
+
+        if (materia.getDataFim() == null && materia.getDataInicio() == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        materias.add(materia);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/materias")
-    public String materia() {
-        return "A materia " + nomeMateria;
+    public List<Materia> materia() {
+        return materias;
     }
-
-
 }
 
 
