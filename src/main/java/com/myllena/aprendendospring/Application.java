@@ -1,4 +1,4 @@
-package com.Myllena.aprendendospring;
+package com.myllena.aprendendospring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
