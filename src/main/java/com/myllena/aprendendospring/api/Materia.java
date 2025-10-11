@@ -2,14 +2,20 @@ package com.myllena.aprendendospring.api;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Materia {
 
+    private UUID id = UUID.randomUUID();
     private String nome;
-    private LocalDateTime dataInicio;
-    private LocalDateTime dataFim;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
     private String observacao;
     private LocalDate dataRegistro = LocalDate.now();
+
+    public UUID getId() {
+        return id;
+    }
 
     public String getNome() {
         return nome;
@@ -19,19 +25,19 @@ public class Materia {
         this.nome = nome;
     }
 
-    public LocalDateTime getDataInicio() {
+    public LocalDate getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDateTime dataInicio) {
+    public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public LocalDateTime getDataFim() {
+    public LocalDate getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(LocalDateTime dataFim) {
+    public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
 
