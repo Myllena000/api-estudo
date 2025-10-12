@@ -42,6 +42,41 @@ public class MateriaApi {
                 .getFirst();
     }
 
+    @PatchMapping("/materias/{id}")
+    public Materia patch(@PathVariable UUID id, @RequestBody Materia materia) {
+        return materias.stream()
+                .filter(mt -> mt.getId().compareTo(id) == 0)
+                .map(mt -> {
+                    mt.setNome(materia.getNome());
+                    mt.setDataFim(materia.getDataFim());
+                    return mt;
+                })
+                .toList()
+                .getFirst();
+    }
+
+    @PutMapping("/materias/{id}")
+    public Materia put(@PathVariable UUID id, @RequestBody Materia materia) {
+        return materias.stream()
+                .filter(mt -> mt.getId().compareTo(id) == 0)
+                .map(mt -> {
+                    mt.setNome(materia.getNome());
+                    mt.setDataInicio(materia.getDataInicio());
+                    mt.setDataFim(materia.getDataFim());
+                    mt.setObservacao(materia.getObservacao());
+                    return mt;
+                })
+                .toList()
+                .getFirst();
+    }
+
+    @DeleteMapping("/materias/{id}")
+    public ResponseEntity<Void> delete(@PathVariable UUID id) {
+        materias.removeIf(materia -> materia.getId().compareTo(id) == 0);
+
+        return ResponseEntity.ok().build();
+    }
+
 }
 
 
